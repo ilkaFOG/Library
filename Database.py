@@ -19,10 +19,10 @@ class Book:
     @title.setter
     def title(self, title:str):
         assert type(title) is type(str()), 'Заголовок должен быть строкой!'
-        self.title = title
+        self.__title = title
 
     def __str__(self):
-        return 'Год издания: {}, Название: {}, Автор: {}'.format(self.year, self.title, self.author)
+        return f'Год издания: {self.year}, Название: {self.title}, Автор: {self.author}'
 
 
 class Library:
@@ -30,7 +30,7 @@ class Library:
         self.books = books
     
 
-book = Book(2001, 'Бу-га-га', 'Бетховен')
+book = Book(2001, 'Бу-га-га', 'Килька Фрог')
 print(book)
 
 
