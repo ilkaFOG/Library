@@ -16,13 +16,22 @@ class Book:
     def title(self):   
         return self.__title
 
+    @property
+    def author(self):
+        return self.__author
+        
     @title.setter
     def title(self, title:str):
-        assert type(title) is type(str()), 'Заголовок должен быть строкой!'
+        assert isinstance(title, str), 'Заголовок должен быть строкой!'
         self.__title = title
 
+    @author.setter
+    def author(self, author:str):
+        assert isinstance(author, str), 'Автор должен быть строкой!'
+        self.__author = author    
+
     def __str__(self):
-        return f'Год издания: {self.year}, Название: {self.title}, Автор: {self.author}'
+        return f'Год издания: {self.year}, Название: {self.title}, Автор: {self.author};'
 
 
 class Library:
